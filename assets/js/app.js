@@ -51,8 +51,10 @@ function copyvalues(e) {
 
 window.onload = () => {
   const data = JSON.parse(localStorage.getItem('bookstore'));
-  bookObj = data;
-  displayBooks(bookObj);
+  if (data) {
+    bookObj = data;
+    displayBooks(bookObj);
+  }
 };
 
 form.addEventListener('submit', copyvalues);

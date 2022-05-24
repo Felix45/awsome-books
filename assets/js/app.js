@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 class BookStore {
   constructor() {
     this.objBooks = JSON.parse(localStorage.getItem('bookstore')) || [];
@@ -10,18 +11,16 @@ class BookStore {
   }
 
   displayBooks() {
-    let listOfBooks = '';
+    let listOfBooks = '<table class="table table-striped table-hover">';
     this.objBooks.forEach((book, index) => {
       listOfBooks += `
-      <article>
-        <div>${book.title}</div>
-        <div>${book.author}</div>
-        <div>
-          <button class="btn-delete" id=${index}>Remove</button>
-        </div>
-        <hr/>
-      </article>`;
+    <tr>
+    <td>${book.title} by ${book.author}</td>
+    <td class="d-flex justify-content-end"><button class="btn-delete" id=${index}>Remove</button></td>
+    </tr>
+      `;
     });
+    listOfBooks += '</table>';
     document.querySelector('.list-books').innerHTML = listOfBooks;
     this.registerDeletebuttons();
   }
@@ -54,3 +53,12 @@ form.addEventListener('submit', (e) => {
   bookstore.addBook(form.elements.title.value, form.elements.author.value);
   form.reset();
 });
+
+
+/* <article>
+        <div>${book.title} by ${book.author}</div>
+        <div>
+          <button class="btn-delete" id=${index}>Remove</button>
+        </div>
+        <hr/>
+      </article> */

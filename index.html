@@ -5,17 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="./assets/js/app.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/styles/app.css">
     <title>Awsome Books App</title>
 </head>
 <body>
-    <main>
-        <h1>Awsome Books</h1>
+    <main class="container">
+        <h1 class="text-center">All Awsome Books</h1>
         <div class="list-books" id="list-books">
         </div>
-        <form action="./index.html">
-            <input type="text" placeholder="Title" name="title" id="title"> <br>
-            <input type="text" placeholder="Author" name="author" id="author"> <br>
-            <button type="submit" id="submit">Add</button>
+        <h2 class="text-center">Add New Book</h2>
+        <form class="d-flex flex-column justify-content-center " action="./index.html">
+            <input type="text" placeholder="Title" name="title" id="title" required> <br>
+            <input type="text" placeholder="Author" name="author" id="author" required> <br>
+            <div class="d-flex justify-content-end"><button type="submit" id="submit">Add</button></div>
         </form>
     </main>
 </body>

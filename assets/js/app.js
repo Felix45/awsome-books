@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 class BookStore {
   constructor() {
     this.objBooks = JSON.parse(localStorage.getItem('bookstore')) || [];
@@ -11,7 +10,7 @@ class BookStore {
   }
 
   displayBooks() {
-    let listOfBooks = '<table class="table table-striped table-hover">';
+    let listOfBooks = '<table class="table table-striped table-sm table-hover">';
     this.objBooks.forEach((book, index) => {
       listOfBooks += `
     <tr>
@@ -43,22 +42,14 @@ class BookStore {
     localStorage.setItem('bookstore', data);
   }
 }
+
 const bookstore = new BookStore();
 const form = document.forms[0];
-window.onload = () => {
-  bookstore.displayBooks();
-};
+
+window.onload = () => { bookstore.displayBooks(); };
+
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   bookstore.addBook(form.elements.title.value, form.elements.author.value);
   form.reset();
 });
-
-
-/* <article>
-        <div>${book.title} by ${book.author}</div>
-        <div>
-          <button class="btn-delete" id=${index}>Remove</button>
-        </div>
-        <hr/>
-      </article> */

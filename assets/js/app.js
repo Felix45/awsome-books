@@ -22,8 +22,26 @@ class BookStore {
         <hr/>
       </article>`;
     });
-    document.querySelector('.list-of-books').innerHTML = listOfBooks;
+    document.querySelector('.list-books').innerHTML = listOfBooks;
     this.registerDeletebuttons();
+  }
+
+  registerDeletebuttons() {
+    if (this.objBooks.length > 0) {
+      const deleteButtons = document.querySelectorAll('.btn-delete');
+      deleteButtons.forEach((button) => button.addEventListener('click', this.deleteBook.bind(this)));
+    }
+  }
+
+  deleteBook(book) {
+    this.objBooks.splice(book.target.id, 1);
+    this.populateLocalStorage();
+    this.displayBooks();
+  }
+
+  populateLocalStorage() {
+    const data = JSON.stringify(this.objBooks);
+    localStorage.setItem('bookstore', data);
   }
 }
 const bookstore = new BookStore();

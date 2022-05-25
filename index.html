@@ -10,6 +10,25 @@
     <title>Awsome Books App</title>
 </head>
 <body>
+    <header>        
+        <nav class="navbar bg-light">
+          <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">Navbar</span>
+            <ul class="nav justify-content-end">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">List</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Add new</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+    </header>
+    <div class="d-flex justify-content-end px-4">TIme and Date</div>
     <main class="container">
         <h1 class="text-center">All Awsome Books</h1>
         <div class="list-books" id="list-books">
@@ -21,5 +40,8 @@
             <div class="d-flex justify-content-end"><button type="submit" id="submit">Add</button></div>
         </form>
     </main>
+    <footer class="bg-light p-2">
+        Copyrights Reserved
+    </footer>
 </body>
 </html>

@@ -49,7 +49,7 @@ const menuItems = document.querySelectorAll('.nav-link');
 
 function showSection() {
   const show = this.getAttribute('data-section');
-  menuItems.forEach((menuItem) => { menuItem.classList.remove('active') });
+  menuItems.forEach((menuItem) => { menuItem.classList.remove('active'); });
   this.classList.add('active');
   const toggleSections = document.querySelectorAll('.content-area');
   toggleSections.forEach((el) => {
@@ -59,12 +59,11 @@ function showSection() {
 }
 
 function displayDate() {
-  let currentDate = new Date().toDateString();
-  document.getElementById('timer').innerHTML = currentDate + ', ' + new Date().toLocaleTimeString('en-US');
+  const currentDate = new Date().toDateString();
+  document.getElementById('timer').innerHTML = `${currentDate} ${new Date().toLocaleTimeString('en-US')}`;
 }
 
 menuItems.forEach((menuItem) => menuItem.addEventListener('click', showSection));
-
 
 window.onload = () => { bookstore.displayBooks(); };
 
